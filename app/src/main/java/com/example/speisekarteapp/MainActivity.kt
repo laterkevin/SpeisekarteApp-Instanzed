@@ -9,7 +9,11 @@ import com.example.speisekarteapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     var bill: Float = 0f
-    val menuMap: Map<String, Float> = hashMapOf("Kaffee" to 3f, "Cola" to 2.5f, "Tee" to 2f)
+    val menueList: MutableList<Drink> = mutableListOf(
+        Drink("Kaffe", 3f),
+        Drink("Tea", 2f),
+        Drink("Cola", 2.5f),
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,31 +27,38 @@ class MainActivity : AppCompatActivity() {
         var cokeCount: Int = 0
         var teaCount: Int = 0
 
-        val coffePrice = menuMap["Kaffee"]
-        val cokePrice = menuMap["Cola"]
-        val teaPrice = menuMap["Tee"]
+        val coffePrice = menueList[0].price
+        val cokePrice = menueList[1].price
+        val teaPrice = menueList[2].price
 
-        binding.cofPrice = coffePrice.toString()
-        binding.cokPrice = cokePrice.toString()
-        binding.tPrice = teaPrice.toString()
+        // setze die Preise in die vorgesehene View für die Gertänke über die binding Variable
 
-        binding.coffeeBtn.setOnClickListener(
+        binding.coffeePrice = coffePrice.toString()
+        binding.cokePrice = cokePrice.toString()
+        binding.teaPrice = teaPrice.toString()
+
+        // implementiere einen onClicklistener für das Kaffe Icon
+        binding.coffeButton.setOnClickListener(
             View.OnClickListener {
                 addToBill(coffePrice)
                 coffeeCount++
-                binding.anzahlKaffeeView.text = coffeeCount.toString()
+                binding.coffeeCount = coffeeCount.toString()
                 binding.total = ""
             }
         )
-        binding.teaBtn.setOnClickListener(
+
+        // implementiere einen onClicklistener für das Tee Icon
+        binding.teaButton.setOnClickListener(
             View.OnClickListener {
                 addToBill(teaPrice)
                 teaCount++
-                binding.anzahlTeeView.text = teaCount.toString()
+                binding.teaCount = teaCount.toString()
                 binding.total = ""
             }
         )
-        binding.cokeBtn.setOnClickListener(
+
+        // implementiere einen onClicklistener für das Cola Icon
+        binding.cokeButton.setOnClickListener(
             View.OnClickListener {
                 addToBill(cokePrice)
                 cokeCount++
@@ -56,13 +67,15 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
-        binding.billBtn.setOnClickListener(
+        // implementiere einen onClickListener für den Gesamtpreis
+        binding.billButton.setOnClickListener(
             View.OnClickListener {
                 binding.total = bill.toString()
             }
         )
 
-        binding.newBtn.setOnClickListener(
+        // implementiere einen onClicListener für neue Kunden
+        binding.newButton.setOnClickListener(
             View.OnClickListener {
                 cokeCount = 0
                 coffeeCount = 0
