@@ -10,8 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:background="@color/backgroundD2">
+        android:background="@color/backgroundD2"
+        tools:context=".MainActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -27,11 +27,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Speisekarte"
-                app:titleTextColor="@color/SI_Grey"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                android:text="@string/menu"
+                android:textColor="@color/SI_Grey"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -39,58 +38,326 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/backgroundD1"
             android:adjustViewBounds="true"
-            android:padding="8dp"
+            android:paddingVertical="16dp"
+            android:background="@color/black"
+            android:paddingHorizontal="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:srcCompat="@drawable/speisekarterahmen" />
+            app:srcCompat="@drawable/speisekarterahmen"
+            android:contentDescription="@string/menu" />
 
         <TableLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_margin="56dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginVertical="56dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="@id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
                 <Button
-                    android:id="@+id/btnCoffee"
+                    android:id="@+id/coffeeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/buttonColor"
+                    android:padding="0dp"
+                    android:text="+&#9749;"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24dp"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <Space
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/coffeePrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="&#9749;"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:text="3"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:text="€"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/wineButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:backgroundTint="@color/buttonColor"
-                    android:textSize="24sp"
+                    android:padding="0dp"
+                    android:text="+&#127863;"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24dp"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <Space
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/winePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:text="4.20"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:text="€"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/cocktailButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/buttonColor"
+                    android:padding="0dp"
+                    android:text="+&#127865;"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24dp"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+                <Space
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/cocktailPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:text="6.90"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
                     tools:ignore="HardcodedText" />
                 <TextView
-                    android:id="@+id/tvCoffee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="00.00€"
+                    android:layout_gravity="center"
                     android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
+                    android:text="€"
                     android:textColor="@color/SI_Grey"
-                    />
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="36dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/drink"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/amount"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/drink1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/coffeeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp" />
+            </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/drink2Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/wineCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/drink3Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/cocktailCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/sum"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:layout_weight="1"
+                    android:text="0.00"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|end"
+                    android:text="€"
+                    android:textColor="@color/SI_Grey"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </TableRow>
         </TableLayout>
 
-
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/SI_Yellow"
+            android:padding="10dp"
+            android:text="@string/reset"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
