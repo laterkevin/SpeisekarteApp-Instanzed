@@ -10,7 +10,7 @@
     <!-- more colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="buttonColor">#878787</color>
+    <color name="buttonColor">#34FFFFFF</color>
     <color name="noColor">#00000000</color>
 
     <!-- background dark -->
