@@ -4,298 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="coffeePrice"
-            type="String" />
-        <variable
-            name="cokePrice"
-            type="String" />
-        <variable
-            name="teaPrice"
-            type="String" />
-
-        <variable
-            name="coffeeCount"
-            type="String" />
-        <variable
-            name="cokeCount"
-            type="String" />
-        <variable
-            name="teaCount"
-            type="String" />
-        
-        <variable
-            name="total"
-            type="String" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        android:background="@color/black">
+        tools:context=".MainActivity">
 
-        <LinearLayout
-            android:id="@+id/drinks_menu"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:background="@drawable/speisekarterahmen"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="50dp">
-                <Button
-                    android:id="@+id/coffe_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="&#9749;"
-                    android:textSize="25dp">
-
-                </Button>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="bottom"
-                    android:layout_weight="1"
-                    android:text="@{`.......................   ` +coffeePrice + ` €`}"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                >
-
-                <Button
-                    android:id="@+id/tea_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:textSize="25dp"
-                    android:text="&#127861;">
-                </Button>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@{`.......................   ` +cokePrice + ` €`}"
-                    android:textColor="@color/white"></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:background="@color/transparent"
-                >
-
-                <Button
-                    android:id="@+id/coke_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:textSize="25dp"
-                    android:text="&#129380;">
-                </Button>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:gravity="bottom"
-                    android:text="@{`.......................   ` +teaPrice + ` €`}"></TextView>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="403dp"
-            android:layout_height="453dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/drinks_menu"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="Artikelbezeichnung"
-                    android:textSize="20dp"
-                    android:textColor="@color/white">
+                android:layout_gravity="center"
+                android:text="Fun App"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-                </TextView>
+        </androidx.appcompat.widget.Toolbar>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Anzahl"
-                    android:textAlignment="viewEnd"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorSecondary"
+            android:text="Button"
+            android:textColor="?attr/colorOnSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="Kaffe"
-                    android:textSize="20dp"
-                    android:textColor="@color/white">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/coffee_count_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@{coffeeCount}"
-                    android:textAlignment="viewEnd"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="Tee"
-                    android:textSize="20dp"
-                    android:textColor="@color/white">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/tea_count_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@{teaCount}"
-                    android:textAlignment="viewEnd"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="Cola"
-                    android:textSize="20dp"
-                    android:textColor="@color/white">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/coke_count_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@{cokeCount}"
-                    android:textAlignment="viewEnd"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/transparent"
-                    android:text="Gesamtpreis"
-                    android:textSize="20dp"
-                    android:textColor="@color/white">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/total_price_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@{total}"
-                    android:textAlignment="viewEnd"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/new_button"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:text="&#127775; Neu" />
-
-                <Button
-                    android:id="@+id/bill_button"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:text="&#128182; Betrag"
-                    android:layout_marginLeft="20dp"
-
-                    />
-
-
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorSecondaryVariant"
+            android:text="Button"
+            android:textColor="?attr/colorOnSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button1"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
