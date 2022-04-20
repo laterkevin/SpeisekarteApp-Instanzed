@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
 
     /* -------------------- Klassen Variablen -------------------- */
     private var bill: Float = 0f
-    private val coffee = Drink("Kaffee", 3.95f)
-    private val wine = Drink("Wein", 4.20f)
-    private val cocktail = Drink("Cocktail", 6.90f)
+    private val drink1 = Drink("Kaffee", 3.95f)
+    private val drink2 = Drink("Wein", 4.20f)
+    private val drink3 = Drink("Cocktail", 6.90f)
 
     /* -------------------- Lifecycle -------------------- */
     /**
@@ -28,53 +28,53 @@ class MainActivity : AppCompatActivity() {
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         // Setze hier die Namen, Preise und Count in der View über die binding Variable
-        binding.drink1Name.text = coffee.name
-        binding.drink2Name.text = wine.name
-        binding.drink3Name.text = cocktail.name
+        binding.drink1Name.text = drink1.name
+        binding.drink2Name.text = drink2.name
+        binding.drink3Name.text = drink3.name
 
-        binding.coffeePrice.text = coffee.price.toString()
-        binding.winePrice.text = wine.price.toString()
-        binding.cocktailPrice.text = cocktail.price.toString()
+        binding.drink1Price.text = drink1.price.toString()
+        binding.drink2Price.text = drink2.price.toString()
+        binding.drink3Price.text = drink3.price.toString()
 
-        binding.coffeeCount.text = coffee.count.toString()
-        binding.wineCount.text = wine.count.toString()
-        binding.cocktailCount.text = cocktail.count.toString()
+        binding.drink1Count.text = drink1.count.toString()
+        binding.drink2Count.text = drink2.count.toString()
+        binding.drink3Count.text = drink3.count.toString()
         binding.totalPrice.text = "0.0"
 
         // implementiere einen onClicklistener für das Kaffee Icon
-        binding.coffeeButton.setOnClickListener {
-            addToBill(coffee.price)
-            coffee.count++
-            binding.coffeeCount.text = coffee.count.toString()
+        binding.drink1Button.setOnClickListener {
+            addToBill(drink1.price)
+            drink1.count++
+            binding.drink1Count.text = drink1.count.toString()
             binding.totalPrice.text = bill.toString()
         }
 
         // implementiere einen onClicklistener für das Wein Icon
-        binding.wineButton.setOnClickListener {
-            addToBill(wine.price)
-            wine.count++
-            binding.wineCount.text = wine.count.toString()
+        binding.drink2Button.setOnClickListener {
+            addToBill(drink2.price)
+            drink2.count++
+            binding.drink2Count.text = drink2.count.toString()
             binding.totalPrice.text = bill.toString()
         }
 
         // implementiere einen onClicklistener für das Cocktail Icon
-        binding.cocktailButton.setOnClickListener {
-            addToBill(cocktail.price)
-            cocktail.count++
-            binding.cocktailCount.text = cocktail.count.toString()
+        binding.drink3Button.setOnClickListener {
+            addToBill(drink3.price)
+            drink3.count++
+            binding.drink3Count.text = drink3.count.toString()
             binding.totalPrice.text = bill.toString()
         }
 
         // implementiere einen onClicListener für den ResetButton
         binding.resetButton.setOnClickListener {
-            coffee.count = 0
-            wine.count = 0
-            cocktail.count = 0
+            drink1.count = 0
+            drink2.count = 0
+            drink3.count = 0
             bill = 0f
 
-            binding.coffeeCount.text = coffee.count.toString()
-            binding.wineCount.text = wine.count.toString()
-            binding.cocktailCount.text = cocktail.count.toString()
+            binding.drink1Count.text = drink1.count.toString()
+            binding.drink2Count.text = drink2.count.toString()
+            binding.drink3Count.text = drink3.count.toString()
             binding.totalPrice.text = "0.0"
         }
     }

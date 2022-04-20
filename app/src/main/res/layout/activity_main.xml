@@ -65,7 +65,7 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/coffeeButton"
+                    android:id="@+id/drink1Button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/buttonColor"
@@ -80,7 +80,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/coffeePrice"
+                    android:id="@+id/drink1Price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -109,7 +109,7 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/wineButton"
+                    android:id="@+id/drink2Button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/buttonColor"
@@ -124,7 +124,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/winePrice"
+                    android:id="@+id/drink2Price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -152,7 +152,7 @@
                 android:layout_weight="1">
 
                 <Button
-                    android:id="@+id/cocktailButton"
+                    android:id="@+id/drink3Button"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/buttonColor"
@@ -167,7 +167,7 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/cocktailPrice"
+                    android:id="@+id/drink3Price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -241,7 +241,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/coffeeCount"
+                    android:id="@+id/drink1Count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
@@ -267,7 +267,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/wineCount"
+                    android:id="@+id/drink2Count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
@@ -293,7 +293,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/cocktailCount"
+                    android:id="@+id/drink3Count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|end"
