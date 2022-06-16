@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
         binding.drink2Name.text = drink2.name
         binding.drink3Name.text = drink3.name
 
-        binding.drink1Price.text = drink1.price.toString()
-        binding.drink2Price.text = drink2.price.toString()
-        binding.drink3Price.text = drink3.price.toString()
+        binding.drink1Price.text = "%.2f".format(drink1.price)
+        binding.drink2Price.text = "%.2f".format(drink2.price)
+        binding.drink3Price.text = "%.2f".format(drink3.price)
 
         binding.drink1Count.text = drink1.count.toString()
         binding.drink2Count.text = drink2.count.toString()
