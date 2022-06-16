@@ -1,6 +1,7 @@
 package com.example.speisekarteapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.speisekarteapp.databinding.ActivityMainBinding
@@ -9,6 +10,7 @@ import kotlin.math.round
 /**
  * Main Activity, dient als Einstiegspunkt für die App
  */
+val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
 
     /* -------------------- Klassen Variablen -------------------- */
@@ -43,26 +45,40 @@ class MainActivity : AppCompatActivity() {
 
         // implementiere einen onClicklistener für das Kaffee Icon
         binding.drink1Button.setOnClickListener {
-            addToBill(drink1.price)
-            drink1.count++
-            binding.drink1Count.text = drink1.count.toString()
-            binding.totalPrice.text = bill.toString()
+            try {
+                addToBill(drink1.price)
+                drink1.count++
+                binding.drink1Count.text = drink1.count.toString()
+                binding.totalPrice.text = bill.toString()
+            }catch (ex: Exception){
+                Log.e(TAG, "Something went wrong: $ex")
+            }
+
         }
 
         // implementiere einen onClicklistener für das Wein Icon
         binding.drink2Button.setOnClickListener {
-            addToBill(drink2.price)
-            drink2.count++
-            binding.drink2Count.text = drink2.count.toString()
-            binding.totalPrice.text = bill.toString()
+            try {
+                addToBill(drink2.price)
+                drink2.count++
+                binding.drink2Count.text = drink2.count.toString()
+                binding.totalPrice.text = bill.toString()
+            }catch (ex:Exception){
+                Log.e(TAG, "Something went wrong: $ex")
+            }
+
         }
 
         // implementiere einen onClicklistener für das Cocktail Icon
         binding.drink3Button.setOnClickListener {
-            addToBill(drink3.price)
-            drink3.count++
-            binding.drink3Count.text = drink3.count.toString()
-            binding.totalPrice.text = bill.toString()
+           try {
+               addToBill(drink3.price)
+               drink3.count++
+               binding.drink3Count.text = drink3.count.toString()
+               binding.totalPrice.text = bill.toString()
+           } catch (ex:Exception){
+               Log.e(TAG, "Something went wrong: $ex")
+           }
         }
 
         // implementiere einen onClicListener für den ResetButton
