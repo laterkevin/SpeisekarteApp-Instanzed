@@ -11,6 +11,7 @@ import kotlin.math.round
  * Main Activity, dient als Einstiegspunkt für die App
  */
 val TAG = "MainActivity"
+
 class MainActivity : AppCompatActivity() {
 
     /* -------------------- Klassen Variablen -------------------- */
@@ -27,7 +28,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Lege hier die Binding Variable an
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val binding: ActivityMainBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         // Setze hier die Namen, Preise und Count in der View über die binding Variable
         binding.drink1Name.text = drink1.name
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 drink1.count++
                 binding.drink1Count.text = drink1.count.toString()
                 binding.totalPrice.text = bill.toString()
-            }catch (ex: Exception){
+            } catch (ex: Exception) {
                 Log.e(TAG, "Something went wrong: $ex")
             }
 
@@ -63,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 drink2.count++
                 binding.drink2Count.text = drink2.count.toString()
                 binding.totalPrice.text = bill.toString()
-            }catch (ex:Exception){
+            } catch (ex: Exception) {
                 Log.e(TAG, "Something went wrong: $ex")
             }
 
@@ -71,14 +73,14 @@ class MainActivity : AppCompatActivity() {
 
         // implementiere einen onClicklistener für das Cocktail Icon
         binding.drink3Button.setOnClickListener {
-           try {
-               addToBill(drink3.price)
-               drink3.count++
-               binding.drink3Count.text = drink3.count.toString()
-               binding.totalPrice.text = bill.toString()
-           } catch (ex:Exception){
-               Log.e(TAG, "Something went wrong: $ex")
-           }
+            try {
+                addToBill(drink3.price)
+                drink3.count++
+                binding.drink3Count.text = drink3.count.toString()
+                binding.totalPrice.text = bill.toString()
+            } catch (ex: Exception) {
+                Log.e(TAG, "Something went wrong: $ex")
+            }
         }
 
         // implementiere einen onClicListener für den ResetButton
@@ -93,6 +95,48 @@ class MainActivity : AppCompatActivity() {
             binding.drink3Count.text = drink3.count.toString()
             binding.totalPrice.text = "0.0"
         }
+
+        if (savedInstanceState != null) {
+            bill = savedInstanceState.getFloat("Bill", 0F)
+            drink1.count = savedInstanceState.getInt("drink1", 0)
+            drink2.count = savedInstanceState.getInt("drink2", 0)
+            drink3.count = savedInstanceState.getInt("drink3", 0)
+            binding.totalPrice.text = bill.toString()
+            binding.drink1Count.text = drink1.count.toString()
+            binding.drink2Count.text = drink2.count.toString()
+            binding.drink3Count.text = drink3.count.toString()
+        }
+    }
+
+    //Gibt im Log DC für Instanzen aus
+    override fun onStart() {
+        super.onStart()
+        Log.e(TAG, "Lifecycle onStart")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.e(TAG, "Lifecycle onRestart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e(TAG, "Lifecycle onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e(TAG, "Lifecycle onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "Lifecycle onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e(TAG, "Lifecycle onDestroy")
     }
 
     /**
@@ -103,5 +147,14 @@ class MainActivity : AppCompatActivity() {
             bill += price
             bill = round(bill * 100) / 100
         }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "Lifecycle onSaveInstanceState called")
+
+        outState.putFloat("Bill", bill)
+        outState.putInt("drink1", drink1.count)
+        outState.putInt("drink2", drink2.count)
+        outState.putInt("drink3", drink3.count)
     }
 }
